@@ -1,3 +1,5 @@
+Blok 1 - Opdracht 6
+
 # Form Validator
 
 ❌ Deze Validator is niet veilig om te gebruiken en is alleen bedoeld voor een UX ervaring en als opdracht om te leren. Client side validatie kan worden omzeild.
@@ -93,9 +95,5 @@ Voeg het script toe onderaan de pagina. Vul bij de PathToFile het pad in naar he
 ```
 
 ---
-
-Blok 1 - Opdracht 6
-
-
 
 
