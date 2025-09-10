@@ -14,24 +14,30 @@
 </head>
 
 <body>
-    <form id="registrationForm" onsubmit="return validateForm()" novalidate>
+    <form id="form">
         <h1>Inschrijfformulier</h1>
+
+        <div id="formError" class="alert text-white bg-danger d-none text-center p-3">
+            Sommige velden bevatten ongeldige of ontbrekende gegevens
+        </div>
 
         <fieldset>
             <legend>Persoonlijke gegevens</legend>
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="FirstName">Voornaam</label>
-                    <input type="text" id="FirstName" class="form-control" name="FirstName" oninvalid="error()" validate="required|min:2|max:30">
+                    <input type="text" id="FirstName" class="form-control" name="FirstName" validate="required|min:2|max:10">
                     <div for="FirstName" class="error"></div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="LastName">Achternaam</label>
-                    <input type="text" id="LastName" class="form-control" name="LastName" validate="required|min:2|max:30">
+                    <input type="text" id="LastName" class="form-control" name="LastName" validate="required|min:2|max:10">
+                    <div for="LastName" class="error"></div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="UserName">Gebruikersnaam</label>
-                    <input type="text" id="UserName" class="form-control" name="UserName" validate="required|min:2|max:30">
+                    <input type="text" id="UserName" class="form-control" name="UserName" validate="required|max:25|nospaces">
+                    <div for="UserName" class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -41,22 +47,26 @@
             <div class="row">
                 <div class="col-md-8 mb-3">
                     <label for="StreetName">Straatnaam</label>
-                    <input type="text" id="StreetName" class="form-control" name="StreetName" validate="required|min:2|max:50">
+                    <input type="text" id="StreetName" class="form-control" name="StreetName" validate="required|min:1">
+                    <div for="StreetName" class="error"></div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="HouseNumber">Huisnummer</label>
-                    <input type="text" id="HouseNumber" class="form-control" name="HouseNumber" validate="required|min:1|max:10">
+                    <input type="text" id="HouseNumber" class="form-control" name="HouseNumber" validate="required|numeric">
+                    <div for="HouseNumber" class="error"></div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <label for="PostalCode">Postcode</label>
-                    <input type="text" id="PostalCode" class="form-control" name="PostalCode" validate="required|min:4|max:10">
+                    <input type="text" id="PostalCode" class="form-control" name="PostalCode" validate="required|postcode">
+                    <div for="PostalCode" class="error"></div>
                 </div>
                 <div class="col-md-8 mb-3">
                     <label for="Residence">Woonplaats</label>
-                    <input type="text" id="Residence" class="form-control" name="Residence" validate="required|min:2|max:50">
+                    <input type="text" id="Residence" class="form-control" name="Residence" validate="required">
+                    <div for="Residence" class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -67,10 +77,12 @@
                 <div class="col-md-6 mb-3">
                     <label for="Email">E-mailadres</label>
                     <input type="email" id="Email" class="form-control" name="Email" validate="required|email">
+                    <div for="Email" class="error"></div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="Telephone">Telefoonnummer</label>
-                    <input type="text" id="Telephone" class="form-control" name="Telephone" validate="required|min:2|max:20">
+                    <input type="text" id="Telephone" class="form-control" name="Telephone" validate="required|phone">
+                    <div for="Telephone" class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -80,11 +92,13 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="Password">Wachtwoord</label>
-                    <input type="password" id="Password" class="form-control" name="Password" validate="required|min:6|max:20">
+                    <input type="password" id="Password" class="form-control" name="Password" validate="required|min:8|password">
+                    <div for="password" class="error"></div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="RepeatPassword">Herhaal wachtwoord</label>
                     <input type="password" id="RepeatPassword" class="form-control" name="RepeatPassword" validate="required|match:Password">
+                    <div for="RepeatPassword" class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -94,11 +108,13 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="birthday" class="form-label">Geboortedatum</label>
-                    <input type="date" id="birthday" name="birthday" class="form-control">
+                    <input type="date" id="birthday" name="birthday" class="form-control" validate="required|minage:12">
+                    <div for="birthday" class="error"></div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="birthtime" class="form-label">Geboortetijd</label>
-                    <input type="time" id="birthtime" name="birthtime" class="form-control">
+                    <input type="time" id="birthtime" name="birthtime" class="form-control" validate="required">
+                    <div for="birthtime" class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -117,6 +133,7 @@
                 <input class="form-check-input" type="radio" name="gender" id="genderAnders" value="anders">
                 <label class="form-check-label" for="genderAnders">Anders</label>
             </div>
+            <div class="error"></div>
         </fieldset>
 
         <fieldset class="mb-3">
@@ -132,6 +149,7 @@
                         <option value="hbo">HBO</option>
                         <option value="universiteit">Universiteit</option>
                     </select>
+                <div class="error"></div>
                 </div>
             </div>
         </fieldset>
@@ -153,9 +171,17 @@
         </fieldset>
 
         <fieldset class="mb-3">
+            <legend class="form-label">Motivatie</legend>
+                <label for="motivation" class="form-label">Waarom wil je meedoen?</label>
+                <textarea id="motivation" name="motivation" class="form-control" rows="5" validate="required|min:20"></textarea>
+            <div class="error"></div>
+        </fieldset>
+
+        <fieldset class="mb-3">
             <label class="form-check-label" for="algemeneVoorwaarden">
                 <input class="form-check-input" type="checkbox" id="algemeneVoorwaarden" name="algemeneVoorwaarden" validate="required">
                 Ik ga akkoord met de algemene voorwaarden
+                <div for="algemeneVoorwaarden" class="error"></div>
             </label>
         </fieldset>
 
@@ -165,20 +191,6 @@
         </div>
     </form>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function(){
-        var input = document.querySelectorAll("input");
-        //console.log(input);
-
-        function error(){
-            document.getElementById("")
-        }
-
-        input.forEach(input => {
-            console.log(input)});
-        event.preventDefault;
-    });
-</script>
-
+    <script src="js/validator.js"></script>
 </body>
 </html>
