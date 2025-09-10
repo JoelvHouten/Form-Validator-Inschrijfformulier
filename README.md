@@ -93,5 +93,5 @@ Voeg het script toe onderaan de pagina. Vul bij de PathToFile het pad in naar he
 ---
 
 Blok 1 - Opdracht 6
->>>>>>> main
+
 
