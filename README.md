@@ -2,6 +2,8 @@
 
 Een lichtgewicht, flexibele JavaScript-formuliervalidator die eenvoudig kan worden toegepast op elk HTML-formulier. Deze validator werkt zonder externe dependencies en ondersteunt een breed scala aan validatieregels.
 
+<span style="color:red">Deze Validator is niet veilig om te gebruiken alleen voor een UI ervaring.</span>
+
 ---
 
 ## Features
@@ -93,5 +95,6 @@ Voeg het script toe onderaan de pagina. Vul bij de PathToFile het pad in naar he
 ---
 
 Blok 1 - Opdracht 6
+
 
 
