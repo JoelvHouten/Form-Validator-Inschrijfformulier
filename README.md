@@ -1,6 +1,3 @@
-# Inschrijfformulier
-Blok 1 - Opdracht 6
-
 # Form Validator
 
 Een lichtgewicht, flexibele JavaScript-formuliervalidator die eenvoudig kan worden toegepast op elk HTML-formulier. Deze validator werkt zonder externe dependencies en ondersteunt een breed scala aan validatieregels.
@@ -95,6 +92,6 @@ Voeg het script toe onderaan de pagina. Vul bij de PathToFile het pad in naar he
 
 ---
 
-=======
-Blok 1 - Opdracht ?
+Blok 1 - Opdracht 6
 >>>>>>> main
+
